@@ -53,31 +53,31 @@ class StockRow extends Component {
 
   render() {
     return (
-<div>
+      <div>
 
 
 
-      <Table>
-        <Table.Header style={{ backgroundColor: "#f5f5dc" }}>
-          <Table.Row>
-            <Table.HeaderCell>Hisse Kodu</Table.HeaderCell>
-            <Table.HeaderCell>Hisse Fiyatı</Table.HeaderCell>
-            <Table.HeaderCell>Değişim</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>
-              <a href={`/${this.props.ticker}`}>{this.props.ticker}</a>
-            </Table.Cell>
-            <Table.Cell>${this.state.price}</Table.Cell>
-            <Table.Cell style={this.changeStyle()}>
-              {this.state.dollar_change ? this.state.dollar_change : "yükleniyor"}&nbsp;({this.state.percent_change}%)
-            </Table.Cell>
-          </Table.Row>
-        </Table.Body>
-      </Table>
-</div>
+        <Table>
+          <Table.Header style={{ backgroundColor: "#f5f5dc" }}>
+            <Table.Row>
+              <Table.HeaderCell>Hisse Kodu</Table.HeaderCell>
+              <Table.HeaderCell>Hisse Fiyatı</Table.HeaderCell>
+              <Table.HeaderCell>Değişim</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>
+                <a href={`/${this.props.ticker}`}>{this.props.ticker}</a>
+              </Table.Cell>
+              <Table.Cell>${this.state.price}</Table.Cell>
+              <Table.Cell style={this.changeStyle()}>
+                {this.state.dollar_change ? this.state.dollar_change : "yükleniyor"}&nbsp;({this.state.percent_change}%)
+              </Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>
+      </div>
 
     );
   }

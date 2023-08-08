@@ -3,7 +3,11 @@ import { iex } from "../config/iex";
 import { stock } from "../resources/stock";
 import { Table } from "semantic-ui-react";
 
-
+const names = [{ name: "Apple Teknoloji", nick: "aapl" },
+{ name: "Google ", nick: "goog" },
+{ name: "Paccar", nick: "pcar" },
+];
+var hisseadı = ""
 class StockPageData extends Component {
   constructor(props) {
     super(props);
@@ -11,9 +15,12 @@ class StockPageData extends Component {
       price: null,
       date: null,
       time: null,
+      name: null,
       percent_change: null,
       dollar_change: null,
+      isim:this.props.ticker,
     };
+    console.log(hisseadı.name)
   }
   changeStyle() {
     var color;
@@ -28,6 +35,7 @@ class StockPageData extends Component {
 
   }
   getData() {
+
     return new Promise((resolve, reject) => {
       stock.latestPrice(this.props.ticker, (data) => {
         this.applyData(data);
@@ -41,6 +49,7 @@ class StockPageData extends Component {
       price: data.price,
       date: data.date,
       time: data.time,
+      name: data.name
 
     });
     stock.getYesterDayClose(this.props.ticker, data.date, (yesterday) => {
@@ -80,8 +89,9 @@ class StockPageData extends Component {
           <Table.Body>
             <Table.Row>
               <Table.Cell>
-                <a href={`/${this.props.ticker}`}>{this.props.ticker}</a>
+                {this.props.ticker}
               </Table.Cell>
+
               <Table.Cell>${this.state.price}</Table.Cell>
               <Table.Cell style={this.changeStyle()}>
                 {this.state.dollar_change ? this.state.dollar_change : "yükleniyor"}&nbsp;({this.state.percent_change}%)

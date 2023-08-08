@@ -3,7 +3,7 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import StockRow from '../components/StockRow';
 import { stock } from '../resources/stock';
-import { Button } from 'semantic-ui-react';
+import { Button, Table } from 'semantic-ui-react';
 import { Grid, GridColumn } from 'semantic-ui-react';
 
 
@@ -21,7 +21,7 @@ export default function
                 <Grid>
                     <Grid.Row>
                         <GridColumn width={3}>
-                            <Button ><a style={{color:"red"}} href='/portfoy'>Portföyüm</a></Button>
+                            <Button ><a style={{ color: "red" }} href='/portfoy'>Portföyüm</a></Button>
 
                         </GridColumn>
                         <GridColumn width={12}>
@@ -30,7 +30,7 @@ export default function
                                 <div className='card' style={{ width: "100%", height: "100%" }}>
                                     <div className='card-body'>
                                         <ul className='list-group list-group-flush'>
-
+                           
                                             {lis.map((ticker) => (
                                                 <StockRow key={ticker} ticker={ticker} />
                                             ))}

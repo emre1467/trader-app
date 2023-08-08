@@ -71,10 +71,13 @@ function findLatestValidData(data) {
   while (index >= 0) {
     const stockData = data[index];
     if (stockData.close !== null && stockData.close !== undefined &&stockData.date !== null && stockData.date !== undefined && stockData.label !== null && stockData.label !== undefined) {
+      console.log(stockData)
       const formattedData = {
+      
         price: stockData.close,
         date: stockData.date,
         time: stockData.label,
+        
       };
 
       return formattedData;
