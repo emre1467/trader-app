@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: red;
 }
 
 .App-logo {
@@ -35,4 +36,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+.body{
+  background-color: red;
+}
+.transparent-table,
+.transparent-table-header,
+.transparent-table-body {
+  background-color: rgba(245, 245, 220, 0.8); /* Use your desired transparent color */
 }
